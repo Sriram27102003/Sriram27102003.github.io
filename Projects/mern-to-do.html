@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do-List for Daily Tasks</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <!-- You can copy-paste your site's navigation bar here -->
+  </header>
+  <main>
+    <section>
+      <h1>To-Do-List using MERN Stack</h1>
+      
+      <h2>Purpose</h2>
+      <p>Organizes Tasks: Stores tasks persistently using MongoDB.
+
+Enforces Deadlines: Uses Due Dates for prioritization and structure.
+
+Ensures Timeliness: Uses Reminders (managed by Node/Express) to proactively alert the user and prevent missed deadlines.
+
+Delivers a Decent UX: Provides a fast, interactive experience via React.</p>
+      
+      <h2>Technical Approach</h2>
+      <p>
+        1. 💾 Backend (MongoDB, Express.js, Node.js)
+The backend handles data persistence, core logic, and the critical scheduling of reminders.
+
+Data Model (MongoDB): The task schema must include fields for:
+
+title (String)
+
+description (String)
+
+dueDate (Date type)
+
+reminderTime (Date type, e.g., 30 minutes before the dueDate).
+
+isCompleted (Boolean)
+
+API Endpoints (Express.js): Standard RESTful APIs are used for CRUD (Create, Read, Update, Delete) operations on tasks.
+
+POST /api/tasks: Create a new task, including the dueDate and reminderTime.
+
+GET /api/tasks: Retrieve all tasks.
+
+PUT /api/tasks/:id: Update task details or completion status.
+
+Reminder Scheduling (Node.js): This is the most technical part.
+
+Use a library like node-cron or Agenda to set up a scheduled job that runs periodically (e.g., every minute).
+
+This job queries MongoDB for tasks where the reminderTime is within the next few minutes and the task is not yet completed.
+
+For matched tasks, the backend triggers the reminder notification logic (see point 3).
+
+2. 🖥️ Frontend (React)
+The React frontend focuses on collecting task data and displaying the reminder pop-ups.
+
+Task Input: Use form components where the user can select a task title and, crucially, a date and time picker for the dueDate and optionally set the reminderTime.
+
+State Management: Use React's built-in hooks (useState, useEffect) or a global state library (Redux/Zustand) to manage the list of tasks and the state of any visible reminders.
+
+API Interaction: Use fetch or a library like Axios to communicate with the Express backend endpoints for creating, fetching, and updating tasks.
+      </p>
+      
+      <h2>Technologies Used</h2>
+      <p>MongoDB,Express.js,React.js,Node.js</p>
+      
+      <h2>Results</h2>
+      <p>
+        The combination of the MERN stack with these features results in a fully functional, interactive, and reliable application whose purpose is to help the user stop forgetting things and manage their time effectively.
+      </p>
+      
+      <h2>Screenshots</h2>
+      <img src="../image/todo.png" alt="Result Screenshot" style="max-width: 600px;">
+      
+      <h2>GitHub Repository</h2>
+      <a href="https://github.com/Sriram27102003/mern-todo1">View code</a>
+    </section>
+  </main>
+</body>
+</html>
