@@ -20,10 +20,35 @@
     </header>
 
     <main>
-        <section id="hero">
-            <h2>Hi, I'm S Sriram</h2>
-            <p>Computer Science Engineer and Java developer</p>
-        </section>
+        <section id="hero" style="
+    /* Set the background image on the main section */
+    background-image: url('../image/background.jpg'); /* <<< ADD YOUR LOCAL IMAGE PATH HERE */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0; /* Remove padding here, it will go on the inner div */
+    margin: 0;
+">
+    <div style="
+        background-color: rgba(0, 0, 0, 0.55); /* The dark, transparent overlay */
+        color: white; /* Set the text color */
+        padding: 150px 20px; /* Add the padding inside the overlay */
+        text-align: center;
+        /* Optional: Text styling */
+        font-family: sans-serif;
+    ">
+        <h2 style="
+            font-size: 3.5em; 
+            margin-bottom: 15px;
+            /* Text shadow for better pop */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        ">Hi, I'm S Sriram</h2>
+        <p style="
+            font-size: 1.5em; 
+            font-weight: 300;
+        ">Computer Science Engineer and Java developer</p>
+    </div>
+</section>
 
         <section id="about">
             <h2>About Me</h2>
